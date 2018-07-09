@@ -1,8 +1,18 @@
 #include "button_functions.h"
 #include "filechoose.h"
 
+Glib::RefPtr<Gtk::Builder> main_builder;
+
 Gtk::Window *parent_main_window = nullptr;
 Gtk::TextView *textview_ptr = nullptr;
+Gtk::Entry *make_option_input = nullptr;
+
+
+void set_builder(Glib::RefPtr<Gtk::Builder> mainbuilder)
+{
+    main_builder = main_builder;
+    std::cout << "Main builder set to: " << &main_builder << std::endl;
+}
 
 void set_mainwindow(Gtk::Window *mainwindow)
 {
