@@ -11,7 +11,6 @@ void filechoose_dialog(Gtk::Window *parent, Gtk::TextView *textview)
     tempbuild->get_widget("filechooser", filechoose);
     filechoose->set_transient_for(*parent);
     filechoose->set_title("Select file");
-    filechoose->set_default_size(400,400);
     auto openbutton = filechoose->add_button("Open", Gtk::RESPONSE_OK);
     auto closebutton = filechoose->add_button("Close", Gtk::RESPONSE_CLOSE);
     int response = filechoose->run();
