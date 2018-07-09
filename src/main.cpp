@@ -12,8 +12,9 @@ int main(int argc, char *argv[])
 
     typedef void (*buttonFunction)();
 
-    auto builder = Gtk::Builder::create();
+    Glib::RefPtr<Gtk::Builder> builder = Gtk::Builder::create();
     builder->add_from_file("interface.glade");
+    set_builder(builder);
     builder->get_widget("mainwindow", window);
 
     set_mainwindow(window);
@@ -34,9 +35,8 @@ int main(int argc, char *argv[])
     builder->get_widget("textview", txtview);
     set_textview(txtview);
     txtview->set_vexpand(true);
-    std::cout << "Buffer: " << txtview->get_buffer()->get_text() << std::endl;
 
-    window->set_default_size(800,600);
+    window->set_default_size(900,800);
 
     return app->run(*window);
 
