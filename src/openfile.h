@@ -3,4 +3,4 @@
 #include <string>
 #include <gtkmm.h>
 
-void filechoose_dialog(Gtk::Window *parent, Gtk::TextView *textview);
+void openfile_action(Gtk::Window *parent, Gtk::TextView *textview);

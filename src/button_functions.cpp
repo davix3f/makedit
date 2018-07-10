@@ -1,5 +1,5 @@
 #include "button_functions.h"
-#include "filechoose.h"
+#include "openfile.h"
 
 Glib::RefPtr<Gtk::Builder> main_builder;
 
@@ -29,7 +29,7 @@ void set_textview(Gtk::TextView *textview)
 
 void openfile_click()
 {
-    filechoose_dialog(parent_main_window, textview_ptr);
+    openfile_action(parent_main_window, textview_ptr);
 }
 
 void save_click()

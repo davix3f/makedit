@@ -1,14 +1,14 @@
-#include "filechoose.h"
+#include "openfile.h"
 
 auto tempbuild = Gtk::Builder::create();
 
-void filechoose_dialog(Gtk::Window *parent, Gtk::TextView *textview)
+void openfile_action(Gtk::Window *parent, Gtk::TextView *textview)
 {
     std::cout << "Summoned Gtk::FileChooserDialog from parent main window " << parent << std::endl;
     tempbuild->add_from_file("interface.glade");
     printf("Opening file\n");
     Gtk::FileChooserDialog *filechoose;
-    tempbuild->get_widget("filechooser", filechoose);
+    tempbuild->get_widget("openfile_dialog", filechoose);
     filechoose->set_transient_for(*parent);
     filechoose->set_title("Select file");
     auto openbutton = filechoose->add_button("Open", Gtk::RESPONSE_OK);
