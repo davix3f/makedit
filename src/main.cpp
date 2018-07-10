@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include "button_functions.h"
+#include "makedit_namespace.h"
 
 int main(int argc, char *argv[])
 {
@@ -12,10 +13,9 @@ int main(int argc, char *argv[])
 
     typedef void (*buttonFunction)();
 
-    Glib::RefPtr<Gtk::Builder> builder = Gtk::Builder::create();
-    builder->add_from_file("interface.glade");
-    set_builder(builder);
-    builder->get_widget("mainwindow", window);
+    //Glib::RefPtr<Gtk::Builder> builder = Gtk::Builder::create();
+    supportive::glade_builder->add_from_file("interface.glade");
+    supportive::glade_builder->get_widget("mainwindow", window);
 
     set_mainwindow(window);
 
@@ -26,19 +26,17 @@ int main(int argc, char *argv[])
 
     for(uint x=0; x<buttonNames.size(); x++)
     {
-        builder->get_widget(buttonNames[x], buttonPointers[x]);
+        supportive::glade_builder->get_widget(buttonNames[x], buttonPointers[x]);
         buttonPointers[x]->signal_clicked().connect(sigc::ptr_fun(buttonFunctions[x]));
-        std::cout << x <<" Assigned \'" << buttonNames[x]  << "\' to function " << &buttonFunctions[x] << std::endl;
+        std::cout <<" Assigned \'" << buttonNames[x]  << "\' to function " << &buttonFunctions[x] << std::endl;
     }
 
     Gtk::TextView *txtview;
-    builder->get_widget("textview", txtview);
-    set_textview(txtview);
+    supportive::glade_builder->get_widget("textview", txtview);
     txtview->set_vexpand(true);
 
-    Gtk::HeaderBar *info_headerbar;
-    builder->get_widget("info_headerbar", info_headerbar);
-    set_headerbar(info_headerbar);
+
+	set_widgets();
 
     window->set_default_size(900,800);
 

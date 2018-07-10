@@ -1,18 +1,10 @@
 #include "button_functions.h"
-#include "openfile.h"
-
-Glib::RefPtr<Gtk::Builder> main_builder;
 
 Gtk::Window *parent_main_window = nullptr;
 Gtk::TextView *textview_ptr = nullptr;
 Gtk::Entry *make_option_input = nullptr;
-Gtk::HeaderBar *info_bar;
+Gtk::HeaderBar *info_bar = nullptr;
 
-void set_builder(Glib::RefPtr<Gtk::Builder> mainbuilder)
-{
-    main_builder = main_builder;
-    std::cout << "Main builder set to: " << &main_builder << std::endl;
-}
 
 void set_mainwindow(Gtk::Window *mainwindow)
 {
@@ -21,19 +13,17 @@ void set_mainwindow(Gtk::Window *mainwindow)
     std::cout << "parent_main_window value is now: " << mainwindow << std::endl;
 }
 
-void set_textview(Gtk::TextView *textview)
+void set_widgets()
 {
-    textview_ptr = textview;
+    supportive::glade_builder->get_widget("textview",textview_ptr);
     std::cout << "Textview set to: " << textview_ptr << std::endl;
+
+	supportive::glade_builder->get_widget("info_headerbar", info_bar);
+    std::cout << "Info bottom bar set to: " << info_bar << std::endl;
+    
+    supportive::glade_builder->get_widget("make_option_input", make_option_input);
+    std::cout << "Make option entry set to: " << make_option_input << std::endl;
 }
-
-
-void set_headerbar(Gtk::HeaderBar *headerbar)
-{
-    info_bar = headerbar;
-    std::cout << "Info bottom header bar set to: " << info_bar << std::endl;
-}
-
 
 
 

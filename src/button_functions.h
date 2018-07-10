@@ -1,10 +1,10 @@
 #include <iostream>
 #include <gtkmm.h>
+#include "makedit_namespace.h"
+#include "openfile.h"
 
 void set_mainwindow(Gtk::Window *mainwindow);
-void set_textview(Gtk::TextView *textview);
-void set_builder(Glib::RefPtr<Gtk::Builder> mainbuilder);
-void set_headerbar(Gtk::HeaderBar *headerbar);
+void set_widgets();
 
 void openfile_click();
 void save_click();

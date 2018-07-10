@@ -152,17 +152,10 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkComboBox" id="make_option_combo">
+                  <object class="GtkEntry" id="make_option_input">
                     <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="has_entry">True</property>
-                    <child internal-child="entry">
-                      <object class="GtkEntry" id="make_option_input">
-                        <property name="can_focus">False</property>
-                        <property name="overwrite_mode">True</property>
-                        <property name="placeholder_text" translatable="yes">example: "all"</property>
-                      </object>
-                    </child>
+                    <property name="can_focus">True</property>
+                    <property name="placeholder_text" translatable="yes">example: "all"</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -242,7 +235,14 @@
           <object class="GtkHeaderBar" id="info_headerbar">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="title">Empty buffer :(</property>
             <property name="spacing">5</property>
+            <child>
+              <object class="GtkProgressBar">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+              </object>
+            </child>
           </object>
           <packing>
             <property name="expand">False</property>
