@@ -6,7 +6,7 @@ Glib::RefPtr<Gtk::Builder> main_builder;
 Gtk::Window *parent_main_window = nullptr;
 Gtk::TextView *textview_ptr = nullptr;
 Gtk::Entry *make_option_input = nullptr;
-
+Gtk::HeaderBar *info_bar;
 
 void set_builder(Glib::RefPtr<Gtk::Builder> mainbuilder)
 {
@@ -27,9 +27,19 @@ void set_textview(Gtk::TextView *textview)
     std::cout << "Textview set to: " << textview_ptr << std::endl;
 }
 
+
+void set_headerbar(Gtk::HeaderBar *headerbar)
+{
+    info_bar = headerbar;
+    std::cout << "Info bottom header bar set to: " << info_bar << std::endl;
+}
+
+
+
+
 void openfile_click()
 {
-    openfile_action(parent_main_window, textview_ptr);
+    openfile_action(parent_main_window, textview_ptr, info_bar);
 }
 
 void save_click()

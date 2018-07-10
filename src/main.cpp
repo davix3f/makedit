@@ -36,6 +36,10 @@ int main(int argc, char *argv[])
     set_textview(txtview);
     txtview->set_vexpand(true);
 
+    Gtk::HeaderBar *info_headerbar;
+    builder->get_widget("info_headerbar", info_headerbar);
+    set_headerbar(info_headerbar);
+
     window->set_default_size(900,800);
 
     return app->run(*window);
