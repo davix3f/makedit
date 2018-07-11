@@ -35,6 +35,7 @@ void saveas_click()
 
 void newfile_click()
 {
+    supportive::question_dialog("Warning", "This will erase any unsaved change. Proceed?");
 	printf("New file opened\n");
 }
 
