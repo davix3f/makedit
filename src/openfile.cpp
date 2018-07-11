@@ -4,11 +4,10 @@ auto tempbuild = Gtk::Builder::create();
 
 void openfile_action(Gtk::Window *parent, Gtk::TextView *textview, Gtk::HeaderBar *bottom_bar)
 {
-	std::cout << "Summoned Gtk::FileChooserDialog from parent main window " << parent << std::endl;
 	tempbuild->add_from_file("interface.glade");
-	printf("Opening file\n");
 	Gtk::FileChooserDialog *filechoose;
 	tempbuild->get_widget("openfile_dialog", filechoose);
+	std::cout << "Summoned Gtk::FileChooserDialog from parent main window " << parent << std::endl;
 	filechoose->set_transient_for(*parent);
 	filechoose->set_title("Select file");
 	auto openbutton = filechoose->add_button("Open", Gtk::RESPONSE_OK);
@@ -29,7 +28,6 @@ void openfile_action(Gtk::Window *parent, Gtk::TextView *textview, Gtk::HeaderBa
 					file_content+=line+"\n";
 				}
 				textview->get_buffer()->set_text(file_content);
-				//parent->set_title("makedit ~ " + filechoose->get_filename());
 				bottom_bar->set_title("File: " + filechoose->get_filename());
 			}
 			else { std::cout << "Error occured while opening file" << std::endl; }
