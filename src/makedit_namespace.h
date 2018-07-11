@@ -1,4 +1,6 @@
 #include <iostream>
+#include <fstream>
+#include <string>
 #include <gtkmm.h>
 
 namespace supportive
@@ -10,4 +12,15 @@ namespace supportive
 
 	extern Gtk::Dialog *alertdialog;
 	int question_dialog(const char* message, const char* additional_message);
+}
+
+namespace makedit_logger
+{
+	extern int write_to_file;
+	
+	void init();
+	void init(bool filewrite);
+	
+	bool log(Gtk::Object *sender, const char* message);
+	bool log(const char* message);
 }
