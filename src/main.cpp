@@ -16,8 +16,7 @@ int main(int argc, char *argv[])
     //Glib::RefPtr<Gtk::Builder> builder = Gtk::Builder::create();
     supportive::glade_builder->add_from_file("interface.glade");
     supportive::glade_builder->get_widget("mainwindow", window);
-
-    set_mainwindow(window);
+    supportive::set_mainwindow(window);
 
     Gtk::Button *openfile_button, *save_button, *saveas_button, *newfile_button, *make_button, *execmd_button;
     Gtk::Button* buttonPointers[]={openfile_button, save_button, saveas_button, newfile_button, make_button, execmd_button};
@@ -28,7 +27,7 @@ int main(int argc, char *argv[])
     {
         supportive::glade_builder->get_widget(buttonNames[x], buttonPointers[x]);
         buttonPointers[x]->signal_clicked().connect(sigc::ptr_fun(buttonFunctions[x]));
-        std::cout <<" Assigned \'" << buttonNames[x]  << "\' to function " << &buttonFunctions[x] << std::endl;
+        std::cout <<"Assigned \'" << buttonNames[x]  << "\' to " << &buttonFunctions[x] << std::endl;
     }
 
     Gtk::TextView *txtview;
