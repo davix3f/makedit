@@ -32,3 +32,5 @@
 *.app
 
 src/gtk
+
+src/makedit

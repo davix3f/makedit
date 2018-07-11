@@ -6,7 +6,7 @@ OBJ_FILES = $(patsubst $(SRC_DIR)/%.cpp,%.o,$(SRC_FILES))
 FILENAMES = $(patsubst $(SRC_DIR)/%.cpp, %, $(SRC_FILES))
 
 # COMPILER SETTINGS
-OUTPUT_NAME=gtk
+OUTPUT_NAME = makedit
 CC = g++
 CFLAGS = -Wall
 LIBS = gtkmm-3.0
