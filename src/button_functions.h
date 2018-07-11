@@ -3,7 +3,7 @@
 #include "makedit_namespace.h"
 #include "openfile.h"
 
-void set_mainwindow(Gtk::Window *mainwindow);
+
 void set_widgets();
 
 void openfile_click();
