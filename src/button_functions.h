@@ -1,6 +1,6 @@
 #include <iostream>
 #include <gtkmm.h>
-#include "makedit_namespace.h"
+#include "makedit_namespaces.h"
 #include "openfile.h"
 
 

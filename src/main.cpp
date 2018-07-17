@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 #include "button_functions.h"
-#include "makedit_namespace.h"
+#include "makedit_namespaces.h"
 
 int main(int argc, char *argv[])
 {
@@ -34,7 +34,6 @@ int main(int argc, char *argv[])
 	Gtk::TextView *txtview;
 	supportive::glade_builder->get_widget("textview", txtview);
 	txtview->set_vexpand(true);
-
 
 	set_widgets();
 

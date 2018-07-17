@@ -238,7 +238,10 @@
             <property name="title">Empty buffer :(</property>
             <property name="spacing">5</property>
             <child>
-              <placeholder/>
+              <object class="GtkLabel" id="file_openmode">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+              </object>
             </child>
           </object>
           <packing>
