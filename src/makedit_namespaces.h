@@ -14,6 +14,13 @@ namespace supportive
 	int question_dialog(const char* message, const char* additional_message);
 }
 
+
+namespace makedit_fileops
+{
+	int file_write_permission_checker(const char* file_name);
+}
+
+
 namespace makedit_logger
 {
 	extern int write_to_file;
