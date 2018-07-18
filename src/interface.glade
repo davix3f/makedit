@@ -241,6 +241,7 @@
               <object class="GtkLabel" id="file_openmode">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Display the user permission on the file</property>
               </object>
             </child>
           </object>

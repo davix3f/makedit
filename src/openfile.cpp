@@ -21,8 +21,8 @@ void openfile_action(Gtk::Window *parent, Gtk::TextView *textview, Gtk::HeaderBa
 		case(Gtk::RESPONSE_OK):
 		{
 			if(makedit_fileops::file_write_permission_checker(filechoose->get_filename().c_str()))
-			{ file_openmode_label->set_text("READ-WRITE"); }
-			else { file_openmode_label->set_text("READ ONLY"); }
+			{ file_openmode_label->set_markup("<b>READ-WRITE</b>"); }
+			else { file_openmode_label->set_markup("<b>READ ONLY</b>"); }
 			
 			std::cout << &filechoose << " -- File selected: " << filechoose->get_filename() << std::endl;
 			std::string file_content, line;
