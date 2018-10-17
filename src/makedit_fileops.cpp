@@ -1,9 +1,8 @@
 #include "makedit_namespaces.h"
 
-
-
 namespace makedit_fileops
 {
+	// Check user r/w permission on a file
 	int file_write_permission_checker(const char* file_name)
 	{
 		std::fstream file;

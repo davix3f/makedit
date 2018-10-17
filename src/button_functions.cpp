@@ -6,8 +6,9 @@ Gtk::HeaderBar *info_bar = nullptr;
 
 
 void set_widgets()
+// Widget getting and assignment
 {
-	supportive::glade_builder->get_widget("textview",textview_ptr);
+	supportive::glade_builder->get_widget("textview", textview_ptr);
 	std::cout << "Textview set to: " << textview_ptr << std::endl;
 
 	supportive::glade_builder->get_widget("info_headerbar", info_bar);
