@@ -1,5 +1,6 @@
 #include <iostream>
 #include <gtkmm.h>
+#include <gtksourceview/gtksource.h>
 #include <string>
 #include <vector>
 #include "button_functions.h"

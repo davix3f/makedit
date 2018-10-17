@@ -9,7 +9,7 @@ FILENAMES = $(patsubst $(SRC_DIR)/%.cpp, %, $(SRC_FILES))
 OUTPUT_NAME = makedit
 CC = g++
 CFLAGS = -Wall
-LIBS = gtkmm-3.0
+LIBS = gtkmm-3.0 gtksourceviewmm-3.0
 PKGCONF = `pkg-config --cflags --libs $(LIBS)`
 
 compilesrc: $(SRC_FILES) $(HEAD_FILES)
