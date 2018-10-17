@@ -36,3 +36,5 @@ src/gtk
 src/makedit
 
 *.glade~
+
+\.vscode/
