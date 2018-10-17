@@ -4,14 +4,22 @@ namespace supportive
 {
 	Gtk::Window *main_parent = NULL;
 	void set_mainwindow(Gtk::Window *mainwindow)
+	// Sets main_parent namespace object to mainwindow argument
 	{
 		main_parent = mainwindow;
 		printf("Main window set to: %p\n", main_parent);
 	}
 
+	// Actual assignment of glade_builder
 	Glib::RefPtr<Gtk::Builder> glade_builder = Gtk::Builder::create();
 	
+
 	int question_dialog(const char* message, const char* additional_message)
+	/* Stanard question pop-up dialog with 'Ok' and 'Cancel'
+	   as available responses. 'message' argument is the main message in bold
+	   'additional_message' can be used to display additional info.
+	   E.G 
+	   	  question_dialog("Cannot open this file", "File <file> is corrupted") */
 	{
 		Gtk::MessageDialog dialog(*main_parent, message, false, Gtk::MESSAGE_QUESTION, Gtk::BUTTONS_OK_CANCEL, false);
 
@@ -36,6 +44,6 @@ namespace supportive
 				return(Gtk::RESPONSE_CANCEL); break;
 			}
 		}
-	} // question_dialog
+	} // question_dialog end
 
 } //namespace supportive

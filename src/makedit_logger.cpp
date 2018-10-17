@@ -5,12 +5,16 @@ namespace makedit_logger
 	int write_to_file = 0;
 	
 	void init()
+	// Init without file logging
 	{
 		std::cout << "No argument provided. Setting write_to_file (" << &write_to_file << ") to FALSE" << std::endl;
 		write_to_file = 1;
 	}
 	
 	void init(bool filewrite)
+	// If 'filewrite' is 2, all logging
+	// will be also written on a file
+	// If 'filewrite' is 1, no file logging
 	{
 		if (filewrite==true)
 		{
@@ -25,6 +29,8 @@ namespace makedit_logger
 	}
 
 	bool log(Gtk::Object *sender, const char* message)
+	// Logs a message from a specific
+	// item, with its mem address
 	{
 		if (write_to_file==0)
 		{
@@ -36,6 +42,7 @@ namespace makedit_logger
 	}
 	
 	bool log(const char* message)
+	// Only text logging
 	{
 		if (write_to_file==0)
 		{
